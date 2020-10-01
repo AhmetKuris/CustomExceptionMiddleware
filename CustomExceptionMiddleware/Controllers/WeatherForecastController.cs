@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -26,6 +26,8 @@ namespace CustomExceptionMiddleware.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            throw new Exception("This is a test exception!");
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
