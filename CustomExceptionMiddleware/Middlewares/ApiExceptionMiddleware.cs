@@ -48,6 +48,7 @@ namespace CustomExceptionMiddleware.Middlewares
             var result = JsonConvert.SerializeObject(error);
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+
             return context.Response.WriteAsync(result);
         }
 
