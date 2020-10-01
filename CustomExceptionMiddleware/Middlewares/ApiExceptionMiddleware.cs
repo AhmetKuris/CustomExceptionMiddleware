@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
+using CustomExceptionMiddleware.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -40,8 +41,9 @@ namespace CustomExceptionMiddleware.Middlewares
                         "support team if the problem persists."
             };
 
+            var innerExMessage = exception.GetExceptionMessages();
 
-            _logger.LogError(exception, "Custom ERROR Log: " );
+            _logger.LogError(exception, "Custom ERROR Log: " + innerExMessage);
 
             var result = JsonConvert.SerializeObject(error);
             context.Response.ContentType = "application/json";
