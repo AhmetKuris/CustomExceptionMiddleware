@@ -1,6 +1,6 @@
 # CustomExceptionMiddleware
 
-A basic Exception Handling Middleware made for global exception handling.
+A basic Exception Handling Middleware made for global exception handling. Perfect for Aspect Oriented Programming (AOP).
 
 Project is based on ASP.NET Core Sample Weather Forecaster API project and added on top of it. 
 
